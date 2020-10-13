@@ -2,18 +2,18 @@ DevOps - Home Assignment
 
 Deploy kind on your local machine using a config file which mounts the docker.sock and a host folder to hold jenkins_home data for persistence.
 ```
-kind create cluster --config=./misc/kind/cluster.yaml
+kind create cluster --config=./kind/cluster.yaml
 ```
 
 Deploy jenkins helm chart using values.yml file customized for persistence, additional plugins and a nodejs global tool needed for this task.
 ```
-helm install jenkins jenkins/jenkins -f ./misc/jenkins_helm/values.yaml
+helm install jenkins jenkins/jenkins -f ./jenkins_helm/values.yaml
 ```
 
 Deploy nginx ingress controller and ingress object to expose jenkins UI.
 ```
-kubectl apply -f ./misc/kind/nginx-ingess.yaml
-kubectl apply -f ./misc/kind/jenkins-ingress.yaml
+kubectl apply -f ./kind/nginx-ingess.yaml
+kubectl apply -f ./kind/jenkins-ingress.yaml
 ```
 
 After jenkins resources finished deploying Login to jenkins UI at http://localhost/login with admin password retrieved from helm notes instruction 1 and prepare jenkins for the pipeline as follows:
