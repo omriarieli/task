@@ -14,7 +14,6 @@ pipeline {
           dir('code') {
           git url: "https://github.com/gruntwork-io/sample-app-docker.git"
           }
-        sh 'ls -ltr code/'
         }
       }
 
@@ -41,7 +40,7 @@ pipeline {
     }
     stage('deploy kubernetes') {
       steps {
-        kubernetesDeploy(configs: "misc/deploy.yml", enableConfigSubstitution: true, kubeconfigId: "kindconfig")
+        kubernetesDeploy(configs: "deploy.yml", enableConfigSubstitution: true, kubeconfigId: "kindconfig")
       }
     }
   }
