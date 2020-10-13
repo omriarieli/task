@@ -40,5 +40,5 @@ Browse to http://localhost:8888/ and check the page is displaying Hello World!
 
 Copy the app logs from the console.
 ```
-kubectl -n gruntwork logs pod/sample-app-docker-56cd44977d-zfx7q
+kubectl -n gruntwork logs pod/sample-app-docker-XXXXXXXXXX-XXXXX
 ```
